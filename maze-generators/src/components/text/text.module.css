@@ -1,0 +1,99 @@
+@import "../../css/typography.css";
+
+.text {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+Colors
+*/
+.blue {
+    color: var(--maze-blue);
+}
+
+.green {
+    color: var(--maze-green);
+}
+
+.yellow {
+    color: var(--maze-yellow);
+}
+
+.red {
+    color: var(--maze-red);
+}
+
+.orange {
+    color: var(--maze-orange);
+}
+
+.navy {
+    color: var(--maze-navy);
+}
+
+.white {
+    color: var(--maze-white);
+}
+
+.black {
+    color: var(--maze-black);
+}
+
+/*
+Fonts
+*/
+.avenir {
+    font-family: "avenir", sans-serif;
+}
+
+.mono {
+    font-family: "mono", sans-serif;
+}
+
+.avenir-cast {
+    font-family: "avenir", sans-serif;
+    text-shadow: 0.2rem 0.2rem var(--maze-white);
+}
+/* 
+Font Sizes
+
+Min height is set to 0vw for a bug in safari browsers.
+Bug: https://stackoverflow.com/questions/63965489/safari-14-min-max-clamp-not-working-with-vw-and-px-values 
+*/
+
+.xxs {
+    min-height: 0vw;
+    font-size: clamp(var(--maze-xxs)/2, 1.6vw, var(--maze-xxs));
+}
+
+.xs {
+    min-height: 0vw;
+    font-size: clamp(var(--maze-xs)/2, 2vw, var(--maze-xs));
+}
+
+.s {
+    min-height: 0vw;
+    font-size: clamp(var(--maze-s)/2,2.4vw,var(--maze-s));
+}
+
+.m {
+    min-height: 0vw;
+    font-size: clamp(var(--maze-m)/2, 3.6vw, var(--maze-m));
+}
+
+.l {
+    min-height: 0vw;
+    font-size: clamp(var(--maze-l)/2,6.4vw,var(--maze-l));
+}
+
+.xl {
+    min-height: 0vw;
+    font-size: clamp(var(--maze-xl)/2,11.2vw,var(--maze-xl));
+}
+
+.xxl {
+    min-height: 0vw;
+    font-size: clamp(var(--maze-l), -1.0000rem + 16.0000vw, var(--maze-xxl));
+}
+

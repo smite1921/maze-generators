@@ -1,0 +1,32 @@
+
+.home {
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: var(--maze-blue)
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    border: white 1px dashed;
+}
+
+.body {
+    flex-grow: 1;
+    border: white 1px dashed;
+}
+
+.footer {
+    width: 100vw;
+    background-color: #150235;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    border: white 1px dashed;
+
+}

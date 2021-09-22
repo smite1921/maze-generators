@@ -1,0 +1,25 @@
+html {
+    --maze-blue: #39a1fc;
+    --maze-green: #89e14a;
+    --maze-yellow: #ecc20f;
+    --maze-red: red;
+    --maze-orange: #f27920;
+    --maze-navy: darkblue;
+    --maze-black: #1a1a1a;
+    --maze-white: #efedec;
+    --maze-xxs: 1rem;
+    --maze-xs:1.25rem;
+    --maze-s:1.5rem;
+    --maze-m:2.25rem;
+    --maze-l:4rem;
+    --maze-xl:7rem;
+    --maze-xxl:9rem;
+    background-color: var(--maze-navy);
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}

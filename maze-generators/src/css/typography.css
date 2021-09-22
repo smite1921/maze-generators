@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "mono";
+    src: url("../fonts/jetbrains-mono/jetbrains-mono-regular.woff2");
+}
+
+@font-face {
+    font-family: "avenir";
+    src: url("../fonts/avenir/avenir-black.woff2");
+}
