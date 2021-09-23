@@ -8,15 +8,38 @@ export default function Index() {
   return (
     <div className={styles.home}>
       <div className={styles.header}>
-        <Text text='Maze Generation Algorithms' color={COLOR.BLACK} font={FONT.AVENIR_CAST} size={SIZE.L} />
+        
+        
+        <div className={styles.headerPattern}>
+
+        </div>
+        
+        <div className={styles.headerTitle}>
+          <Text text='Maze Generation Algorithms' color={COLOR.BLACK} font={FONT.AVENIR_CAST} size={SIZE.L} />
+        </div>
+      
       </div>
 
       <div className={styles.body}>
-        body
+
+        <div className={styles.bodyAd1}>
+          <Text text='Ad' color={COLOR.BLACK} font={FONT.AVENIR} size={SIZE.XXS} />
+        </div>
+
+
+        <div className={styles.bodyMain}>
+          <Text text='Main Content' color={COLOR.WHITE} font={FONT.AVENIR} size={SIZE.XXS} />
+        </div>
+
+
+        <div className={styles.bodyAd2}>
+          <Text text='Ad' color={COLOR.BLACK} font={FONT.AVENIR} size={SIZE.XXS} />
+        </div>
+
       </div>
 
       <div className={styles.footer}>
-        <Text text='this website was designed and made by smit patel.' color={COLOR.WHITE} font={FONT.MONO} size={SIZE.xxs} />
+        <Text text='this website was designed and made by smit patel & samritha balamoni.' color={COLOR.WHITE} font={FONT.MONO} size={SIZE.xxs} />
 
       </div>
 
