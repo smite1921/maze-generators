@@ -1,0 +1,48 @@
+
+
+.button {
+    font-family: "avenir", sans-serif;
+    background-color: var(--maze-black);
+    min-height: 0vw;
+    font-size: var(--maze-xs);
+    border: 0;
+    width: 75px;
+    padding: 0.25rem 0;
+    box-shadow: 0.2rem 0.2rem var(--maze-white);
+    transition: all 0.2s;
+
+}
+
+.button:hover {
+    color: var(--maze-white);
+    box-shadow: 0.1rem 0.1rem var(--maze-white);
+}
+
+.green.button:active{
+    color: var(--maze-white);
+    background-color: var(--maze-green);
+}
+
+.yellow.button:active{
+    color: var(--maze-white);
+    background-color: var(--maze-yellow);
+}
+
+.red.button:active{
+    color: var(--maze-white);
+    background-color: var(--maze-red);
+}
+
+.green {
+    color: var(--maze-green);
+}
+
+.yellow {
+    color: var(--maze-yellow);
+}
+
+.red {
+    color: var(--maze-red);
+}
+
+

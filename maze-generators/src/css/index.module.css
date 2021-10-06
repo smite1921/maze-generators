@@ -11,7 +11,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: white 1px dashed;
 }
 
 .header-pattern {
@@ -27,45 +26,31 @@
 .header-title {
     flex-grow: 2;
     padding-bottom: 1rem;
+    text-align: center;
 }
 
 .body {
-    padding: 1rem;
+    padding: 0rem;
     flex-grow: 1;
-    border: white 1px dashed;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
-.body-ad-1 {
-    flex-grow: 1;
-    background-color: var(--maze-orange);
-    margin-right: 0.5rem;
-    border: white 1px dashed;
-}
 
-.body-main{
-    flex-grow: 5;
-    margin: 0 0.5rem;
-    border: white 1px dashed;
-}
 
-.body-ad-2 {
-    flex-grow: 1;
-    background-color: var(--maze-orange);
-    margin-left: 0.5rem;
-    border: white 1px dashed;
 
-}
 
 .footer {
+    text-align: center;
     padding: 0.5rem;
-    width: 100vw;
+    margin-top: 1rem;
     background-color: #150235;
     display: flex;
     flex-direction: row;
     align-content: center;
     justify-content: center;
-    border: white 1px dashed;
 
 }

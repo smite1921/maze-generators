@@ -51,10 +51,16 @@ Fonts
     font-family: "mono", sans-serif;
 }
 
-.avenir-cast {
+.avenir-cast-white {
     font-family: "avenir", sans-serif;
     text-shadow: 0.2rem 0.2rem var(--maze-white);
 }
+
+.avenir-cast-black {
+    font-family: "avenir", sans-serif;
+    text-shadow: 0.15rem 0.15rem var(--maze-black);
+}
+
 /* 
 Font Sizes
 
@@ -64,7 +70,7 @@ Bug: https://stackoverflow.com/questions/63965489/safari-14-min-max-clamp-not-wo
 
 .xxs {
     min-height: 0vw;
-    font-size: clamp(var(--maze-xxs)/2, 1.6vw, var(--maze-xxs));
+    font-size: var(--maze-xxs);
 }
 
 .xs {
@@ -74,7 +80,7 @@ Bug: https://stackoverflow.com/questions/63965489/safari-14-min-max-clamp-not-wo
 
 .s {
     min-height: 0vw;
-    font-size: clamp(var(--maze-s)/2,2.4vw,var(--maze-s));
+    font-size: var(--maze-s);
 }
 
 .m {
@@ -83,7 +89,6 @@ Bug: https://stackoverflow.com/questions/63965489/safari-14-min-max-clamp-not-wo
 }
 
 .l {
-    min-height: 0vw;
     font-size: clamp(var(--maze-l)/2,6.4vw,var(--maze-l));
 }
 

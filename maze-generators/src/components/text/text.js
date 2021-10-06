@@ -37,8 +37,11 @@ function fontClass(font) {
     else if (font === FONT.MONO) {
         return styles.mono;
     }
-    else if (font === FONT.AVENIR_CAST) {
-        return styles.avenirCast;
+    else if (font === FONT.AVENIR_CAST_WHITE) {
+        return styles.avenirCastWhite;
+    }
+    else if (font == FONT.AVENIR_CAST_BLACK) {
+        return styles.avenirCastBlack;
     }
 }
 

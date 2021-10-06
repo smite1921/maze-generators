@@ -1,9 +1,9 @@
 html {
     --maze-blue: #39a1fc;
-    --maze-green: #89e14a;
-    --maze-yellow: #ecc20f;
-    --maze-red: red;
-    --maze-orange: #f27920;
+    --maze-green: #53fc39;
+    --maze-yellow: #fcfc39;
+    --maze-red: #fc5039;
+    --maze-orange: #fcb139;
     --maze-navy: darkblue;
     --maze-black: #1a1a1a;
     --maze-white: #efedec;
@@ -22,4 +22,11 @@ html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+}
+
+::selection {
+    background: var(--maze-orange) /* WebKit/Blink Browsers */
+  }
+::-moz-selection {
+background: var(--maze-orange) /* WebKit/Blink Browsers */
 }

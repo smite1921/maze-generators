@@ -13,7 +13,8 @@ export const COLOR = {
 export const FONT = {
     AVENIR: 0,
     MONO: 1,
-    AVENIR_CAST: 2
+    AVENIR_CAST_WHITE: 2,
+    AVENIR_CAST_BLACK: 3
 }
 
 export const SIZE = {
