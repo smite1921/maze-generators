@@ -42,23 +42,3 @@
     flex-direction: row;
     justify-content: space-between;
 }
-
-.grid-box-all {
-    border: 1px solid;
-}
-  
-.grid-box-top {
-    border-top: 2px solid;
-}
-  
-.grid-box-left {
-    border-left: 2px solid;
-}
-  
-.grid-box-right {
-    border-right: 2px solid;
-}
-  
-.grid-box-bottom {
-    border-bottom: 2px solid;
-}
