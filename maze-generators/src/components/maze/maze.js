@@ -16,7 +16,7 @@ const delay = (time=10) => new Promise(resolve => setTimeout(resolve, time));
 
 
 async function markActive(ref) {
-    ref.current.setProps({...ref.current.props, active:true});
+    ref.current.setProps({...ref.current.props, active:true, visited:false});
     await delay();
 }
 

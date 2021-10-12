@@ -1,4 +1,5 @@
 import React from "react";
+import AldousBroder from "../algorithms/aldous_broder";
 import Binary from "../algorithms/binary";
 import Maze from "../components/maze/maze";
 import Text from "../components/text/text";
@@ -24,18 +25,14 @@ export default function Index() {
 
       <div className={styles.body}>
 
-
-            <div className={styles.bodyMainRow}> <Maze title='Binary' algo={new Binary()} /> </div>
-            <div className={styles.bodyMainRow}> <Maze title='Aldous-Broder' algo={new Binary()}/> </div>
-            <div className={styles.bodyMainRow}> <Maze title='Prims' algo={new Binary()}/> </div>
-            <div className={styles.bodyMainRow}> <Maze title='Kruskal' algo={new Binary()}/> </div>
-            <div className={styles.bodyMainRow}> <Maze title='Recursive Division' algo={new Binary()}/> </div>
-            <div className={styles.bodyMainRow}> <Maze title='Hunt & Kill' algo={new Binary()}/> </div>
-            <div className={styles.bodyMainRow}> <Maze title='Growing Tree' algo={new Binary()}/> </div>
-            <div className={styles.bodyMainRow}> <Maze title='Recursive Backtracking' algo={new Binary()}/> </div> 
-
-          
-
+        <Maze title='Binary' algo={new Binary()} /> 
+        <Maze title='Aldous-Broder' algo={new AldousBroder()}/> 
+        <Maze title='Prims' algo={new Binary()}/> 
+        <Maze title='Kruskal' algo={new Binary()}/> 
+        <Maze title='Recursive Division' algo={new Binary()}/> 
+        <Maze title='Hunt & Kill' algo={new Binary()}/> 
+        <Maze title='Growing Tree' algo={new Binary()}/> 
+        <Maze title='Recursive Backtracking' algo={new Binary()}/>
 
       </div>
 

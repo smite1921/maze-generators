@@ -10,10 +10,6 @@ export default class Binary {
         this.done = false;
     }
 
-    random() {
-        return Math.floor((Math.random() * 2) + 0);
-    }
-
     reset() {
         this.i = 0;
         this.done = false; 
@@ -46,7 +42,7 @@ export default class Binary {
             }
             // Else
             else {
-                await removeSide(this.i, refArray,  (this.random() === 0) ? this.BOTTOM : this.RIGHT);
+                await removeSide(this.i, refArray,  (Math.floor((Math.random() * 2) + 0) === 0) ? this.BOTTOM : this.RIGHT);
             }
         }
         await markVisited(ref);
