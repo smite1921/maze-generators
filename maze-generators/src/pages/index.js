@@ -2,6 +2,7 @@ import React from "react";
 import AldousBroder from "../algorithms/aldous_broder";
 import Binary from "../algorithms/binary";
 import HuntAndKill from "../algorithms/hunt_and_kill";
+import RecursiveBacktracking from "../algorithms/recursive_backtracking";
 import Maze from "../components/maze/maze";
 import Text from "../components/text/text";
 import { COLOR, FONT, SIZE } from "../components/utils/constants";
@@ -33,7 +34,7 @@ export default function Index() {
         <Maze title='Recursive Division' algo={new Binary()}/> 
         <Maze title='Hunt & Kill' algo={new HuntAndKill()}/> 
         <Maze title='Growing Tree' algo={new Binary()}/> 
-        <Maze title='Recursive Backtracking' algo={new Binary()}/>
+        <Maze title='Recursive Backtracking' algo={new RecursiveBacktracking()}/>
 
       </div>
 
