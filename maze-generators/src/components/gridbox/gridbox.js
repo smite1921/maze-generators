@@ -1,15 +1,16 @@
 import React, { useImperativeHandle, useRef, useState } from "react";
+import { COLOR } from "../utils/constants";
 import * as styles from "./gridbox.module.css";
 
 function GridBox( 
     {borderAll=true, borderTop=false, borderLeft=false, borderRight=false, borderBottom=false,
     borderNoTop=false, borderNoLeft=false, borderNoRight=false, borderNoBottom=false,  
     highlightTop=false, highlightLeft=false, highlightRight=false, highlightBottom=false,
-    active=false, visited=false, index}, ref
+    color=COLOR.WHITE, index}, ref
     ) {
     const [props, setProps] = useState({borderAll, borderTop, borderLeft, borderRight, borderBottom,
         borderNoTop, borderNoLeft, borderNoRight, borderNoBottom, 
-        highlightTop, highlightLeft, highlightRight, highlightBottom, active, visited, index})
+        highlightTop, highlightLeft, highlightRight, highlightBottom, color, index})
     
     useImperativeHandle(ref, ()=> ({
         props: props,
@@ -30,8 +31,12 @@ function GridBox(
     className += props.highlightLeft ? ` ${styles.gridBoxHighlightLeft}`: '';    
     className += props.highlightRight ? ` ${styles.gridBoxHighlightRight}`: '';    
     className += props.highlightBottom ? ` ${styles.gridBoxHighlightBottom}`: '';
-    className += props.active ? ` ${styles.gridBoxActive}`: ''    
-    className += props.visited ? ` ${styles.gridBoxVisited}`: '';
+
+    className += props.color === COLOR.WHITE ? ` ${styles.gridBoxWhite}` : 
+                 props.color === COLOR.GREY ? ` ${styles.gridBoxGrey}` : 
+                 props.color === COLOR.GREEN ? ` ${styles.gridBoxGreen}` : 
+                 props.color === COLOR.RED ? ` ${styles.gridBoxRed}` : '';
+
     return <div key={index} className={className}> </div>;
 }
 

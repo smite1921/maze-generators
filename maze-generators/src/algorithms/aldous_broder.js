@@ -1,12 +1,11 @@
+import { DIR, COLOR } from "../components/utils/constants";
+
+const {LEFT, TOP, RIGHT, BOTTOM} = DIR;
 
 export default class AldousBroder {
 
-    init(size, TOP, BOTTOM, LEFT, RIGHT) {
+    init(size) {
         this.size = size;
-        this.TOP = TOP;
-        this.BOTTOM = BOTTOM;
-        this.LEFT = LEFT;
-        this.RIGHT = RIGHT;
         
         this.i = Math.floor((Math.random() * (size*size)) + 0);
         this.unvisted = size * size;
@@ -23,81 +22,103 @@ export default class AldousBroder {
         return this.done;
     }
 
-    _getRandomDir() {
-        let [row, col] = [Math.floor(this.i/this.size), this.i % this.size];
+    _getRandomDir(i, size) {
+        let [row, col] = [Math.floor(i/size), i % size];
         
         // Corner Cases
         let randomDir = Math.floor((Math.random() * 2) + 0);
         // Top left corner
         if ((row === 0) && (col === 0)) {
-            return randomDir ? this.RIGHT : this.BOTTOM;
+            return randomDir ? RIGHT : BOTTOM;
         }
         // Top right corner
-        if ((row === 0) && (col === (this.size - 1))) {
-            return randomDir ? this.LEFT : this.BOTTOM;
+        if ((row === 0) && (col === (size - 1))) {
+            return randomDir ? LEFT : BOTTOM;
         }
         // Bottom left corner
-        if ((row === (this.size - 1)) && (col === 0)) {
-            return randomDir ? this.RIGHT : this.TOP;
+        if ((row === (size - 1)) && (col === 0)) {
+            return randomDir ? RIGHT : TOP;
         }
         // Bottom right corner
-        if ((row === (this.size - 1)) && (col === (this.size - 1))) {
-            return randomDir ? this.LEFT : this.TOP;
+        if ((row === (size - 1)) && (col === (size - 1))) {
+            return randomDir ? LEFT : TOP;
         }
 
         // Edge Cases
         randomDir = Math.floor((Math.random() * 3) + 0)
         // Top Row
         if (row === 0) {
-            return (randomDir === 0) ? this.LEFT : (randomDir === 1) ? this.BOTTOM : this.RIGHT;
+            return (randomDir === 0) ? LEFT : (randomDir === 1) ? BOTTOM : RIGHT;
         }
         // Top column
         if (col === 0) {
-            return (randomDir === 0) ? this.TOP : (randomDir === 1) ? this.RIGHT : this.BOTTOM;
+            return (randomDir === 0) ? TOP : (randomDir === 1) ? RIGHT : BOTTOM;
         }
         // Bottom row
-        if (row === (this.size - 1)) {
-            return (randomDir === 0) ? this.LEFT: (randomDir === 1) ? this.TOP : this.RIGHT;
+        if (row === (size - 1)) {
+            return (randomDir === 0) ? LEFT: (randomDir === 1) ? TOP : RIGHT;
         }
         // Bottom column 
-        if (col === (this.size - 1)) {
-            return (randomDir === 0) ? this.TOP : (randomDir === 1) ? this.LEFT : this.BOTTOM;
+        if (col === (size - 1)) {
+            return (randomDir === 0) ? TOP : (randomDir === 1) ? LEFT : BOTTOM;
         }
 
         // Normal case
-        randomDir = Math.floor((Math.random() * 4) + 0)
+        randomDir = Math.floor((Math.random() * 4) + 0);
         return randomDir;
         
     } 
 
     _getNeighbourRef(dir, refArray) {
-        const arrayShift = (dir === this.TOP) ? (this.i-this.size) : (dir === this.BOTTOM) ? (this.i+this.size) : (dir === this.LEFT) ? (this.i-1) : (this.i+1);
+        const arrayShift = (dir === TOP) ? (this.i-this.size) : (dir === BOTTOM) ? (this.i+this.size) : (dir === LEFT) ? (this.i-1) : (this.i+1);
         return refArray[arrayShift];
     }
 
-    async step(refArray, markActive, markVisited, removeSide) {
+    _isVisited(ref) {
+        return ref.current.props.color === COLOR.WHITE;
+    }
+
+    async step(refArray, setColor, removeSide) {
         
+        // If the maze is already completed
         if (this.done) return this.done;
-        
+
+        // Color Guide:
+        //  - Default cells are grey
+        //  - Active cells are green
+        //  - Visitied cells are white
+
+        // This step must be done for the first iteration.
         if (this.unvisted === this.size*this.size) this.unvisted -= 1;
 
+        // Get the current cell
         let ref = refArray[this.i];
+
+        // If there are unvisited cells in the grid
         if (this.unvisted > 0) {
 
-            await markActive(ref);
+            // mark the current cell as active
+            await setColor(ref, COLOR.GREEN);
 
-            let randomDir = this._getRandomDir();
+            // Get a random neighbouring adjacent cell
+            let randomDir = this._getRandomDir(this.i, this.size);
             let neighbourRef = this._getNeighbourRef(randomDir, refArray);
             
-            if (!neighbourRef.current.props.visited) {
+            // If the neigbouring cell is not visited
+            if (!this._isVisited(neighbourRef)) {
                 await removeSide(this.i, refArray, randomDir);
                 this.unvisted -= 1;
             }
-            this.i = (randomDir === this.TOP) ? (this.i-this.size) : (randomDir === this.BOTTOM) ? (this.i+this.size) : (randomDir === this.LEFT) ? (this.i-1) : (this.i+1);
-            await markVisited(ref);
+
+            // Update current index 
+            this.i = (randomDir === TOP) ? (this.i-this.size) : (randomDir === BOTTOM) ? (this.i+this.size) : (randomDir === LEFT) ? (this.i-1) : (this.i+1);
+            
+            // Mark the current cell as visited
+            await setColor(ref, COLOR.WHITE);
         }
+        // Else all the cells are visited, and the maze is complete
         else {
-            await markVisited(ref);
+            await setColor(ref, COLOR.WHITE);
             this.done = true;
         }
 

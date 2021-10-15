@@ -54,11 +54,18 @@ border-right-color: var(--maze-red);
 border-right-width: 2px;
 }
 
-.grid-box-active {
-    background: var(--maze-green);
+.grid-box-white {
+    background-color: var(--maze-white);
 }
-  
-.grid-box-visited {
+
+.grid-box-grey {
     background-color: lightgrey;
-    border-color: var(--maze-black);
+}
+
+.grid-box-green {
+    background-color: var(--maze-green);
+}
+
+.grid-box-red {
+    background-color: var(--maze-red);
 }

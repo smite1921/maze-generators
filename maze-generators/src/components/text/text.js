@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import {COLOR, FONT, SIZE} from "./text_constants"
+import { COLOR, FONT, SIZE } from "../utils/constants";
 import * as styles from "./text.module.css";
 
 function colorClass(color) {

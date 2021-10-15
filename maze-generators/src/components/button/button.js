@@ -1,5 +1,5 @@
 import React from "react";
-import { COLOR } from "../text/text_constants";
+import { COLOR } from "../utils/constants";
 import * as styles from "./button.module.css";
 
 

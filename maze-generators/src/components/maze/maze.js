@@ -1,27 +1,18 @@
 import React, { createRef, useRef } from "react";
 import Text from "../text/text";
-import { COLOR, FONT, SIZE } from "../text/text_constants";
+import { COLOR, FONT, SIZE, DIR } from "../utils/constants";
 import GridBox from "../gridbox/gridbox";
 import * as styles from "./maze.module.css";
 import Button from "../button/button";
 
 const LENGTH = 12;
-const LEFT = 0;
-const TOP = 1;
-const RIGHT = 2;
-const BOTTOM = 3; 
+const {LEFT, TOP, RIGHT, BOTTOM} = DIR;
 
 
 const delay = (time=10) => new Promise(resolve => setTimeout(resolve, time));
 
-
-async function markActive(ref) {
-    ref.current.setProps({...ref.current.props, active:true, visited:false});
-    await delay();
-}
-
-async function markVisited(ref) {
-    ref.current.setProps({...ref.current.props, active:false, visited:true});
+async function setColor(ref, color) {
+    ref.current.setProps({...ref.current.props, color: color});
     await delay();
 }
 
@@ -47,10 +38,9 @@ async function removeSide(i, refArray,  side) {
 }
 
 export default function Maze({title, algo}) {
-    console.log('load', algo);
     const LOOP = useRef(false);
     const STARTED = useRef(false);
-    algo.init(LENGTH, TOP, BOTTOM, LEFT, RIGHT);
+    algo.init(LENGTH);
     const refArray = [...Array(LENGTH * LENGTH).keys()].map( () => createRef());
     
     const runAlgo = async () => {
@@ -64,9 +54,8 @@ export default function Maze({title, algo}) {
                     STARTED.current = false;
                     break;
                 }
-                done = await algo.step(refArray, markActive, markVisited, removeSide);
+                done = await algo.step(refArray, setColor, removeSide);
             }
-            console.log(title, 'done!')
             STARTED.current = false;
             LOOP.current = false;
 
@@ -96,6 +85,7 @@ export default function Maze({title, algo}) {
                                 borderLeft={col===0} 
                                 borderBottom={row===(LENGTH-1)} 
                                 borderRight={col===(LENGTH-1)}
+                                color={COLOR.GREY}
                                 ref={ref}/>
                         })
                     }
@@ -114,9 +104,6 @@ export default function Maze({title, algo}) {
                     }}/>
 
                     <Button text='reset' color={COLOR.YELLOW} onClick={ async ()=> {
-                        // if (STEP.current == 0) {
-                        //     console.log(title, 'already at start stage!');
-                        // }
                         LOOP.current = false;
                         await delay(50);
                         for (let i=0;i<refArray.length;i++) {
@@ -131,7 +118,8 @@ export default function Maze({title, algo}) {
                                                     highlightTo: false, 
                                                     highlightLeft: false, 
                                                     highlightRight: false, 
-                                                    highlightBottom: false  
+                                                    highlightBottom: false,
+                                                    color: COLOR.GREY
                                                 });
                         }
                         STARTED.current = false;

@@ -8,6 +8,7 @@ export const COLOR = {
     NAVY: 5,
     BLACK: 6,
     WHITE: 7,
+    GREY: 8,
 };
 
 export const FONT = {
@@ -26,3 +27,10 @@ export const SIZE = {
     XL: 5,
     XXL: 6
 }
+
+export const DIR = {
+    LEFT: 0,
+    TOP: 1,
+    RIGHT: 2,
+    BOTTOM: 3 
+};
