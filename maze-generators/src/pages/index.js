@@ -3,6 +3,7 @@ import AldousBroder from "../algorithms/aldous_broder";
 import Binary from "../algorithms/binary";
 import HuntAndKill from "../algorithms/hunt_and_kill";
 import Kruskal from "../algorithms/kruskal";
+import Prim from "../algorithms/prim";
 import RecursiveBacktracking from "../algorithms/recursive_backtracking";
 import Maze from "../components/maze/maze";
 import Text from "../components/text/text";
@@ -33,7 +34,7 @@ export default function Index() {
         <Maze title='Hunt & Kill' algo={new HuntAndKill()}/> 
         <Maze title='Recursive Backtracking' algo={new RecursiveBacktracking()}/>
         <Maze title='Kruskal' algo={new Kruskal()}/> 
-        <Maze title='Prims' algo={new Binary()}/> 
+        <Maze title='Prims' algo={new Prim()}/> 
         <Maze title='Recursive Division' algo={new Binary()}/> 
         <Maze title='Growing Tree' algo={new Binary()}/> 
 
