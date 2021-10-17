@@ -35,7 +35,8 @@ function GridBox(
     className += props.color === COLOR.WHITE ? ` ${styles.gridBoxWhite}` : 
                  props.color === COLOR.GREY ? ` ${styles.gridBoxGrey}` : 
                  props.color === COLOR.GREEN ? ` ${styles.gridBoxGreen}` : 
-                 props.color === COLOR.RED ? ` ${styles.gridBoxRed}` : '';
+                 props.color === COLOR.RED ? ` ${styles.gridBoxRed}` :
+                 props.color === COLOR.YELLOW ? ` ${styles.gridBoxYellow}` : '';
 
     return <div key={index} className={className}> </div>;
 }

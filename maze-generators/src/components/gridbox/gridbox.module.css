@@ -69,3 +69,7 @@ border-right-width: 2px;
 .grid-box-red {
     background-color: var(--maze-red);
 }
+
+.grid-box-yellow {
+    background-color: var(--maze-yellow);
+}

@@ -16,6 +16,20 @@ async function setColor(ref, color) {
     await delay();
 }
 
+function getSetColors(refArray) {    
+    
+    async function setColors(indexes, colors) {
+        for (let i=0;i<indexes.length;i++) {
+            let index = indexes[i];
+            let color = colors[i];
+            refArray[index].current.setProps({...refArray[index].current.props, color: color});
+        }
+        await delay();
+    }
+
+    return setColors;
+}
+
 async function removeSide(i, refArray,  side) {
 
     let arrayShift = (side === TOP) ? (i-LENGTH) : (side === BOTTOM) ? (i+LENGTH) : (side === LEFT) ? (i-1) : (i+1);
@@ -41,8 +55,9 @@ export default function Maze({title, algo}) {
     const LOOP = useRef(false);
     const STARTED = useRef(false);
     algo.init(LENGTH);
-    const refArray = [...Array(LENGTH * LENGTH).keys()].map( () => createRef());
     
+    const refArray = [...Array(LENGTH * LENGTH).keys()].map( () => createRef());
+    const setColors = getSetColors(refArray);
     const runAlgo = async () => {
 
         if (!STARTED.current) {
@@ -54,7 +69,7 @@ export default function Maze({title, algo}) {
                     STARTED.current = false;
                     break;
                 }
-                done = await algo.step(refArray, setColor, removeSide);
+                done = await algo.step(refArray, setColor, removeSide, setColors);
             }
             STARTED.current = false;
             LOOP.current = false;
