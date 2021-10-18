@@ -122,6 +122,8 @@ export default class AldousBroder {
             this.done = true;
         }
 
+        return this.done;
+
 
     }
 
