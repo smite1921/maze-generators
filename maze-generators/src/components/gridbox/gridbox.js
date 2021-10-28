@@ -4,12 +4,14 @@ import * as styles from "./gridbox.module.css";
 
 function GridBox( 
     {borderAll=true, borderTop=false, borderLeft=false, borderRight=false, borderBottom=false,
+    borderTopN=false, borderLeftN=false, borderRightN=false, borderBottomN=false,
     borderNoTop=false, borderNoLeft=false, borderNoRight=false, borderNoBottom=false,  
     highlightTop=false, highlightLeft=false, highlightRight=false, highlightBottom=false,
     color=COLOR.WHITE, index}, ref
     ) {
     const [props, setProps] = useState({borderAll, borderTop, borderLeft, borderRight, borderBottom,
-        borderNoTop, borderNoLeft, borderNoRight, borderNoBottom, 
+        borderNoTop, borderNoLeft, borderNoRight, borderNoBottom,
+        borderTopN, borderLeftN, borderRightN, borderBottomN, 
         highlightTop, highlightLeft, highlightRight, highlightBottom, color, index})
     
     useImperativeHandle(ref, ()=> ({
@@ -22,7 +24,13 @@ function GridBox(
     className += props.borderTop ? ` ${styles.gridBoxTop}`: '';
     className += props.borderLeft ? ` ${styles.gridBoxLeft}`: '';    
     className += props.borderRight ? ` ${styles.gridBoxRight}`: '';    
-    className += props.borderBottom ? ` ${styles.gridBoxBottom}`: '';    
+    className += props.borderBottom ? ` ${styles.gridBoxBottom}`: '';  
+      
+    className += props.borderTopN ? ` ${styles.gridBoxTopN}`: '';
+    className += props.borderLeftN ? ` ${styles.gridBoxLeftN}`: '';    
+    className += props.borderRightN ? ` ${styles.gridBoxRightN}`: '';    
+    className += props.borderBottomN ? ` ${styles.gridBoxBottomN}`: '';  
+
     className += props.borderNoTop ? ` ${styles.gridBoxNoTop}`: '';
     className += props.borderNoLeft ? ` ${styles.gridBoxNoLeft}`: '';    
     className += props.borderNoRight ? ` ${styles.gridBoxNoRight}`: '';    

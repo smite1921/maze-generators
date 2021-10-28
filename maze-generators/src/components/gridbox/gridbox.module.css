@@ -1,7 +1,7 @@
 .grid-box-all {
     border: 1px solid;
 }
-  
+
 .grid-box-top {
     border-top: 2px solid;
 }
@@ -17,6 +17,23 @@
 .grid-box-bottom {
     border-bottom: 2px solid;
 }
+
+.grid-box-top-N{
+    border-top: 1px solid;
+}
+
+.grid-box-left-N{
+    border-left: 1px solid;
+}
+
+.grid-box-right-N{
+    border-right: 1px solid;
+}
+
+.grid-box-bottom-N{
+    border-bottom: 1px solid;
+}
+
 
 .grid-box-no-top {
     border-top: 0px;

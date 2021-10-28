@@ -51,6 +51,31 @@ async function removeSide(i, refArray,  side) {
 
 }
 
+function getAddSides(refArray) {    
+    
+    async function addSides(indexes, sides) {
+        for (let i=0;i<indexes.length;i++) {
+
+            const side = sides[i];
+            const refI = indexes[i];
+
+            const arrayShift = (side === TOP) ? (refI-LENGTH) : (side === BOTTOM) ? (refI+LENGTH) : (side === LEFT) ? (refI-1) : (refI+1);
+            const refBoxBorderProps =  (side === TOP) ? {borderTopN: true} : (side === BOTTOM) ? {borderBottomN: true} : (side === LEFT) ? {borderLeftN: true} : {borderRightN: true};
+            const adjaRefBoxBorderProps =  (side === TOP) ? {borderBottomN: true} : (side === BOTTOM) ? {borderTopN: true} : (side === LEFT) ? {borderRightN: true} : {borderLeftN: true};
+
+            const refBox = refArray[refI];
+            const adjaRefBox = refArray[arrayShift];
+        
+            refBox.current.setProps({...refBox.current.props, ...refBoxBorderProps});
+            if (adjaRefBox !== undefined) adjaRefBox.current.setProps({...adjaRefBox.current.props, ...adjaRefBoxBorderProps});
+
+        }
+        await delay();
+    }
+
+    return addSides;
+}
+
 export default function Maze({title, algo}) {
     const LOOP = useRef(false);
     const STARTED = useRef(false);
@@ -58,6 +83,7 @@ export default function Maze({title, algo}) {
     
     const refArray = [...Array(LENGTH * LENGTH).keys()].map( () => createRef());
     const setColors = getSetColors(refArray);
+    const addSides = getAddSides(refArray);
     const runAlgo = async () => {
 
         if (!STARTED.current) {
@@ -69,7 +95,7 @@ export default function Maze({title, algo}) {
                     STARTED.current = false;
                     break;
                 }
-                done = await algo.step(refArray, setColor, removeSide, setColors);
+                done = await algo.step(refArray, setColor, removeSide, setColors, addSides);
             }
             STARTED.current = false;
             LOOP.current = false;
@@ -126,6 +152,11 @@ export default function Maze({title, algo}) {
                             ref.current.setProps( {...ref.current.props, 
                                                     active:false, 
                                                     visited: false,
+                                                    borderAll:true,
+                                                    borderTopN: false,
+                                                    borderLeftN: false,
+                                                    borderRightN: false,
+                                                    borderBottomN: false,
                                                     borderNoTop: false, 
                                                     borderNoLeft: false, 
                                                     borderNoRight: false, 

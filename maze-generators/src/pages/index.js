@@ -5,6 +5,7 @@ import HuntAndKill from "../algorithms/hunt_and_kill";
 import Kruskal from "../algorithms/kruskal";
 import Prim from "../algorithms/prim";
 import RecursiveBacktracking from "../algorithms/recursive_backtracking";
+import RecursiveDivision from "../algorithms/recursive_division";
 import Wilsons from "../algorithms/wilsons";
 import Maze from "../components/maze/maze";
 import Text from "../components/text/text";
@@ -37,7 +38,8 @@ export default function Index() {
         <Maze title='Recursive Backtracking' algo={new RecursiveBacktracking()}/>
         <Maze title='Kruskal' algo={new Kruskal()}/> 
         <Maze title='Prims' algo={new Prim()}/> 
-        <Maze title='Recursive Division' algo={new Binary()}/> 
+        <Maze title='Recursive Division' algo={new RecursiveDivision()}/>
+      
       </div>
 
       <div className={styles.footer}>
