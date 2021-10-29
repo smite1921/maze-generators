@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://mazegenerators.gatsbyjs.io/">
-    <img alt="Maze Generation Algorithms" src="https://github.com/smite1921/maze-generators/blob/main/maze-generators-logo.svg" width="100" />
+    <img alt="Maze Generation Algorithms" src="https://github.com/smite1921/maze-generators/blob/main/src/images/maze-generators-logo.svg" width="100" />
   </a>
 </p>
 <h1 align="center">
