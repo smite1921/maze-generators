@@ -18,6 +18,7 @@ export default function Index() {
   return (
     <div className={styles.home}>
         <Helmet>
+          <html lang="en" />
           <title>Maze Generation Algorithms</title>
           <meta name="title" content="Maze Generation Algorithms"/>
           <meta name="description" content="A website that visually showcases popular maze generation algorithms."/>
@@ -55,7 +56,7 @@ export default function Index() {
       </div>
 
       <div className={styles.footer}>
-        <Text text='this website was designed and made by smit patel.' color={COLOR.WHITE} font={FONT.MONO} size={SIZE.XXS} />
+        <Text text='this website was designed and made by smit patel' color={COLOR.WHITE} font={FONT.MONO} size={SIZE.XXS} link="https://www.smitpatel.me/"/>
 
       </div>
 
