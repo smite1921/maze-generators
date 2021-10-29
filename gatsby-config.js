@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://mazegenerators.gatsbyjs.io/",
     title: "Maze Generators",
   },
-  plugins: [],
+  plugins: [`gatsby-plugin-react-helmet`],
 };

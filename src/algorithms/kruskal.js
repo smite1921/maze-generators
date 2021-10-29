@@ -38,8 +38,8 @@ export default class Kruskal {
             this.cellsInSet[i] = set; 
 
             let [row, col] = [Math.floor(i/this.size), i % this.size];
-            if (row != (this.size - 1)) this.neighbours.push([i,i+this.size]);
-            if (col != (this.size - 1)) this.neighbours.push([i,i+1]);
+            if (row !== (this.size - 1)) this.neighbours.push([i,i+this.size]);
+            if (col !== (this.size - 1)) this.neighbours.push([i,i+1]);
 
         }
 
@@ -47,7 +47,7 @@ export default class Kruskal {
 
     _canMerge(x,y) {
         // Two cells can merge only if they are part of different disjoint sets;
-        return this.setForCell[x] != this.setForCell[y];
+        return this.setForCell[x] !== this.setForCell[y];
     }
 
     // removeSide(i, refArray,  side)
@@ -84,7 +84,7 @@ export default class Kruskal {
         // If the maze is already completed
         if (this.done) return this.done;
 
-        if (this.neighbours.length != 0) {
+        if (this.neighbours.length !== 0) {
 
             let [x, y] = this._randomPair();
 
@@ -105,7 +105,7 @@ export default class Kruskal {
                 await setColors(setX, new Array(setX.length).fill(COLOR.WHITE));
             }
             
-            if (this.neighbours.length == 0) this.done = true;
+            if (this.neighbours.length === 0) this.done = true;
 
 
         }

@@ -1,4 +1,4 @@
-import React, { useImperativeHandle, useRef, useState } from "react";
+import React, { useImperativeHandle, useState } from "react";
 import { COLOR } from "../utils/constants";
 import * as styles from "./gridbox.module.css";
 

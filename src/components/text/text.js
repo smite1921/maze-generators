@@ -40,7 +40,7 @@ function fontClass(font) {
     else if (font === FONT.AVENIR_CAST_WHITE) {
         return styles.avenirCastWhite;
     }
-    else if (font == FONT.AVENIR_CAST_BLACK) {
+    else if (font === FONT.AVENIR_CAST_BLACK) {
         return styles.avenirCastBlack;
     }
 }

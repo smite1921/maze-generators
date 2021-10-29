@@ -9,6 +9,7 @@ import RecursiveDivision from "../algorithms/recursive_division";
 import Wilsons from "../algorithms/wilsons";
 import Maze from "../components/maze/maze";
 import Text from "../components/text/text";
+import { Helmet } from "react-helmet"
 import { COLOR, FONT, SIZE } from "../components/utils/constants";
 import * as styles from "../css/index.module.css";
 
@@ -16,8 +17,19 @@ import * as styles from "../css/index.module.css";
 export default function Index() {
   return (
     <div className={styles.home}>
+        <Helmet>
+          <title>Maze Generation Algorithms</title>
+          <meta name="title" content="Maze Generation Algorithms"/>
+          <meta name="description" content="A website that visually showcases popular maze generation algorithms."/>
+          <meta charSet="utf-8" />
+          <link rel="icon"
+            type="image/png"
+            href="https://user-images.githubusercontent.com/43019533/139384017-927731dc-8d6f-490f-98d7-6ff432c1d817.png"
+          />
+          <link rel="canonical" href="https://mazegenerators.gatsbyjs.io/" />
+        </Helmet>
+
       <div className={styles.header}>
-        
         
         <div className={styles.headerPattern}>
 
