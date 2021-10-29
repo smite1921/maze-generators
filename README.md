@@ -26,6 +26,8 @@ A website to showcase popular maze generation algorithms.
   
 </table>
 
+**Website Link:** https://mazegenerators.gatsbyjs.io/
+
 ## Run Project Locally
 1. Navigate to project directory
 ```shell
