@@ -4,6 +4,7 @@
   </a>
 </p>
 <h1 align="center">
+
   Maze Generation Algorithms
 </h1>
 
@@ -68,4 +69,9 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 ## Screenshots
 <img src="https://user-images.githubusercontent.com/43019533/139373955-1cc550a6-d7a5-4378-afdf-ab05249fbfe9.png" align="center" width=65%/>
 <br></br>
-<img src="https://user-images.githubusercontent.com/43019533/95948979-b5815a00-0dbf-11eb-9d4b-6447b7d89340.png" align="center" width=40%/>
+<img src="https://user-images.githubusercontent.com/43019533/95948979-b5815a00-0dbf-11eb-9d4b-6447b7d89340.png" align="left" width=40%/>
+<br></br>
+<br></br>
+<br></br>
+<img src="https://user-images.githubusercontent.com/43019533/139384017-927731dc-8d6f-490f-98d7-6ff432c1d817.png" align="left" width=100/>
+
