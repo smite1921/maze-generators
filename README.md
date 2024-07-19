@@ -27,7 +27,7 @@ A website to showcase popular maze generation algorithms.
   
 </table>
 
-**Website Link:** https://mazegenerators.gatsbyjs.io/
+**Website Link:** https://smitpatel.me/maze-generators/
 
 ## Run Project Locally
 1. Navigate to project directory
